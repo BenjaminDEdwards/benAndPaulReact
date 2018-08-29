@@ -1,6 +1,11 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View } from 'react-native';
 
+
+import {createRootNavigator} from './app/router'
+
+export default createRootNavigator();
+/*
 export default class App extends React.Component {
   render() {
     return (
@@ -21,3 +26,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+*/
