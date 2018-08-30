@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Dimensions, Platform } from 'react-native';
-import { StackNavigator, TabNavigator } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import Bookcase from './screens/Bookcase';
@@ -11,7 +11,7 @@ import Profile from './screens/Profile';
 
 let screen = Dimensions.get('window');
 
-export const Tabs = TabNavigator({
+export const Tabs = createBottomTabNavigator({
   'Bookcase': {
     screen: Bookcase,
     navigationOptions: {
@@ -50,7 +50,7 @@ export const Tabs = TabNavigator({
 });
 
 export const createRootNavigator = () => {
-  return StackNavigator(
+  return createStackNavigator(
     {
       Tabs: {
         screen: Tabs,
