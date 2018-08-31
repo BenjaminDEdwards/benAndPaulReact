@@ -42,22 +42,23 @@ export default class Bookcase extends Component {
             title={item.title}
             author={item.author}
             thumbnail={item.thumbnail}
+            navigation={this.props.navigation}
         />
     );
 
-    _keyExtractor = (item, index) => item.id;
+    _keyExtractor = (item, index) => item.id.toString();
 
     render() {
         return (
             <View style={styles.container}>
-              <StatusBar
-                  barStyle="light-content"
-              />
-              <FlatList
-                  data={this.state.books}
-                  keyExtractor={this._keyExtractor}
-                  renderItem={this._renderItem}
-              />
+                <StatusBar
+                    barStyle="light-content"
+                />
+                <FlatList
+                    data={this.state.books}
+                    keyExtractor={this._keyExtractor}
+                    renderItem={this._renderItem}
+                />
             </View>
         );
     }
