@@ -2,16 +2,24 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  Button,
 } from 'react-native';
 
 export default class EditBook extends Component {
   render() {
+    const { navigation } = this.props.navigation;
+    const itemId = navigation.getParam('id', 'NO-ID');
+
     return (
       <View style={styles.container}>
         <Text style={styles.title}>
           EditBook
         </Text>
+        <Button
+            title="Back To books"
+            onPress={() => this.props.navigation.navigate('Tabs')}
+        />
       </View>
     );
   }

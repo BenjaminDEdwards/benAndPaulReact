@@ -42,6 +42,7 @@ export default class extends Component {
       title={item.title}
       author={item.author}
       thumbnail={item.thumbnail}
+      navigation = {this.props.navigation}
     />
   );
 
